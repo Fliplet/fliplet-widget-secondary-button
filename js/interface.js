@@ -15,7 +15,7 @@ Fliplet.Widget.open('com.fliplet.link', {
 $('form').submit(function (event) {
   event.preventDefault();
 
-  data.name = $('#buttonName').val();
+  data.label = $('#buttonLabel').val();
 
   Fliplet.Widget.save(data).then(function () {
     Fliplet.Widget.complete();
