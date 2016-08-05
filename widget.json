@@ -22,7 +22,7 @@
     "dependencies": [
       "fliplet-core",
       "fliplet-navigate",
-      "bootstrap-css:3.3.2"
+      "bootstrap-css"
     ],
     "assets": [
       "js/build.js",
