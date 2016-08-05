@@ -1,15 +1,20 @@
 <div>
-  <form>
-    <h2>Configure your button</h2>
-    <p>Set your button settings</p>
-    <div class="form-group">
-      <label for="buttonLabel">Button label</label>
-      <input type="text" name="label" class="form-control" id="buttonLabel" placeholder="Label" value="{{label}}" required />
+  <form class="form-horizontal">
+    <header>
+      <p>Configure your secondary button</p>
+      <a href="#">Need help?</a>
+    </header>
+
+    <div class="form-group clearfix">
+      <div class="col-xs-4 control-label">
+        <label for="primaryButtonLabel">Button label</label>
+      </div>
+      <div class="col-xs-8">
+        <input type="text" name="name" class="form-control" id="secondaryButtonLabel" placeholder="Label" value="{{label}}" required />
+      </div>
     </div>
 
     <div id="action"></div>
-
-    <input type="submit" value="Save" class="btn btn-primary"/>
 
   </form>
 </div>

@@ -25,7 +25,8 @@
       "bootstrap-css:3.3.2"
     ],
     "assets": [
-      "js/build.js"
+      "js/build.js",
+      "css/build.css"
     ]
   }
 }
