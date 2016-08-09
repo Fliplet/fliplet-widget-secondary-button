@@ -30,3 +30,7 @@ linkActionProvider.then(function (result) {
     window.location.reload();
   });
 });
+
+$('#help_tip').on('click', function() {
+  alert("During beta, please use live chat and let us know what you need help with.");
+});
