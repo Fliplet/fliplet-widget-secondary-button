@@ -10,7 +10,7 @@
         <label for="primaryButtonLabel">Button label</label>
       </div>
       <div class="col-xs-8">
-        <input type="text" name="name" class="form-control" id="secondaryButtonLabel" placeholder="Label" value="{{label}}" required />
+        <input type="text" name="name" class="form-control" id="secondaryButtonLabel" placeholder="Label" value="{{#if label}}{{label}}{{else}}Secondary button{{/if}}" required />
       </div>
     </div>
 
