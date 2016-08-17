@@ -8,6 +8,9 @@
 .form-horizontal {
     overflow: hidden;
 }
+.form-horizontal {
+    padding: 15px;
+}
 header {
     display: flex;
     font-size: 0.8em;
