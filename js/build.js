@@ -4,4 +4,5 @@ $('[data-button-id]').click(function (event) {
   var data = Fliplet.Widget.getData($(this).data('button-id'));
 
   Fliplet.Navigate.to(data.action);
+  Fliplet.Analytics.trackEvent('link', 'screen', event.target.value);
 });
