@@ -1,3 +1,4 @@
+var widgetId = Fliplet.Widget.getDefaultId();
 var data = Fliplet.Widget.getData() || {};
 
 var linkActionProvider = Fliplet.Widget.open('com.fliplet.link', {
@@ -6,20 +7,14 @@ var linkActionProvider = Fliplet.Widget.open('com.fliplet.link', {
   selector: '#action',
   // Also send the data I have locally, so that
   // the interface gets repopulated with the same stuff
-  data: data.action
-  // Removed until fixed
-  /*
-  onEvent: function (e) {
-    // contains e.event and e.data
-    linkSet = e.set;
-
-    if (typeof linkSet == "undefined") {
-      Fliplet.Widget.toggleSaveButton(true);
-    } else {
-      Fliplet.Widget.toggleSaveButton(linkSet);
+  data: data.action,
+  // Events fired from the provider
+  onEvent: function (event, data) {
+    if (event === 'interface-validate') {
+      Fliplet.Widget.toggleSaveButton(data.isValid === true);
     }
   }
-  */
+
 });
 
 // 1. Fired from Fliplet Studio when the external save button is clicked
@@ -35,14 +30,26 @@ $('form').submit(function (event) {
 
 // 3. Fired when the provider has finished
 linkActionProvider.then(function (result) {
-  data.action = result;
+  data.action = result.data;
+  save(true);
+});
+
+function save(notifyComplete) {
   data.label = $('#secondaryButtonLabel').val();
 
   Fliplet.Widget.save(data).then(function () {
-    Fliplet.Widget.complete();
-    window.location.reload();
+    if (notifyComplete) {
+      Fliplet.Widget.complete();
+      window.location.reload();
+    } else {
+      Fliplet.Studio.emit('reload-widget-instance', widgetId);
+    }
   });
-});
+}
+
+$('#primaryButtonLabel').on('keyup change paste', $.debounce(function() {
+  save();
+}, 500));
 
 $('#help_tip').on('click', function() {
   alert("During beta, please use live chat and let us know what you need help with.");
