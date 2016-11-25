@@ -5,19 +5,34 @@
 	width: 100%;
 	padding: 10px 16px;
 	font-size: 18px;
-	line-height: 1.33;
+	line-height: 24px;
 	border: none;
 	border-radius: 6px;
 	text-align: center;
 	cursor: pointer;
+	border-radius: 25px;
+	background-color: transparent;
+	border: 2px solid #337ab7;
+	color: #337ab7;
 }
 
 .btn-secondary:focus,
 .btn-secondary:hover,
 .btn:active:focus {
-  outline: none;
+	outline: none;
 }
 
+.btn-secondary:active:focus,
+.btn-secondary:active:hover {
+	background-color: #337ab7;
+	color: #FFFFFF;
+}
+
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:hover {
+	color: #337ab7;
+}
 @media (min-width:640px) {
 	.btn-secondary {
 		clear: none;
