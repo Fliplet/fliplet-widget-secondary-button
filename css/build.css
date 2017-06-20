@@ -19,6 +19,7 @@
 .btn:active:focus {
 	outline: none;
 }
+
 @media (min-width:640px) {
 	.btn-secondary {
 		clear: none;
@@ -26,4 +27,10 @@
 		width: auto;
 		max-width: 100%;
 	}
+}
+
+@media only screen and (max-width: 640px) {
+  .fl-page-editable [data-fl-edit] [data-fl-widget-instance][data-name="Secondary Button"] {
+    display: block;
+  }
 }
