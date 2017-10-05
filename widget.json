@@ -30,6 +30,7 @@
     ]
   },
   "references": [
-    "action.page:page"
+    "action.page:page",
+    "action.files.id:mediaFile"
   ]
 }
