@@ -50,7 +50,3 @@ function save(notifyComplete) {
 $('#secondaryButtonLabel').on('keyup change paste', $.debounce(function() {
   save();
 }, 500));
-
-$('#help_tip').on('click', function() {
-  alert("During beta, please use live chat and let us know what you need help with.");
-});
