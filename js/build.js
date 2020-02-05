@@ -1,7 +1,9 @@
-$('[data-secondary-button-id]').click(function (event) {
-  event.preventDefault();
+Fliplet.Widget.instance('secondary-button', function(data) {
+  $(this).click(function(event) {
+    event.preventDefault();
 
-  var data = Fliplet.Widget.getData($(this).data('secondary-button-id'));
-
-  Fliplet.Navigate.to(data.action);
+    if (data.action) {
+      Fliplet.Navigate.to(data.action);
+    }
+  });
 });
